@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = NorthWindProject2024
+build_property.RootNamespace = NorthWindProject2024
+build_property.ProjectDir = D:\DownloadsForHardDrive\WEB_CLASS\NorthWindProject2024\NorthWindProject2024\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\DownloadsForHardDrive\WEB_CLASS\NorthWindProject2024\NorthWindProject2024
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRDdXN0b21lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetEmployees.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRFbXBsb3llZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetOrderDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRPcmRlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetShippers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRTaGlwcGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/GetSuppliers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRTdXBwbGllcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertACategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertACustomerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBQ3VzdG9tZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertAEmployeeForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBRW1wbG95ZWVGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertAnOrderDetailForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBbk9yZGVyRGV0YWlsRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertAOrderForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBT3JkZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertAProductForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBUHJvZHVjdEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InsertASupplierForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNlcnRBU3VwcGxpZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/InstertShipper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnN0ZXJ0U2hpcHBlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateACategoryForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBQ2F0ZWdvcnlGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateACustomerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBQ3VzdG9tZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateAEmployeeForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBRW1wbG95ZWVGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateAnOrderDetailForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBbk9yZGVyRGV0YWlsRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateAOrderForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBT3JkZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateAProductForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBUHJvZHVjdEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateAShippersForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBU2hpcHBlcnNGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Home/UpdateASupplierForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVcGRhdGVBU3VwcGxpZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DownloadsForHardDrive/WEB_CLASS/NorthWindProject2024/NorthWindProject2024/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s0n8t5rqd7

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NorthWindProject2024.props" />
+</Project>
