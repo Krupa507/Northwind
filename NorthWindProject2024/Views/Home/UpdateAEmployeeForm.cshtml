@@ -4,10 +4,10 @@
 @{
 }
 
-
+@*//LoganKrupa*@
 <form action="UpdateAEmployee" method="Post">
 
-    <input type="hidden" name="aEmployeeId" value="@ViewBag.ListOfEmployees[0].EmployeeId" />
+    <input type="hidden" name="aEmployeeId" name="Form" onsubmit="return validateForm()" value="@ViewBag.ListOfEmployees[0].EmployeeId" />
 
     LastName <br />
     <input type="text" id="this is for js" class="this is for your css" name="aLastName" value="@ViewBag.ListOfEmployees[0].LastName" /><br />
@@ -44,3 +44,86 @@
 
 
 </form>
+
+
+
+@*######################################################################################*@
+@*##########################    JavaScrip Form Validation    ###########################*@
+@*######################################################################################*@
+@*Fanial W*@
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aLastName"].value == "") {
+            alert("Last Name must be filled out");
+            return false;
+        }
+
+
+        if (document.forms["Form"]["aFirstName"].value == "") {
+            alert("First Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aTitle"].value == "") {
+            alert("Title must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aTitleOfCourtesy"].value == "") {
+            alert("Title Of Courtesy must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aBirthDate"].value == "") {
+            alert("Birth Date must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHireDate"].value == "") {
+            alert("Hire Date must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aAddress"].value == "") {
+            alert("Address must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCity"].value == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRegion"].value == "") {
+            alert("Region must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPostalCode"].value == "") {
+            alert("Postal Code must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCountry"].value == "") {
+            alert("Country must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHomePhone"].value == "") {
+            alert("Home Phone must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHomePhone"].value.length < 10) {
+            alert("Home Phone must be filled out");
+            return false;
+
+
+        }
+        if (document.forms["Form"]["aExtension"].value == "") {
+            alert("Extension must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aNotes"].value == "") {
+            alert("Notes must be filled out or N/A");
+            return false;
+        }
+        if (document.forms["Form"]["aReportsTo"].value == "") {
+            alert("Roports To must be filled out");
+            return false;
+        }
+
+
+
+    }
+</script>

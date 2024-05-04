@@ -74,7 +74,7 @@
         <h1>Insert Customer Form</h1>
 
         <!-- Insert Customer form -->
-        <form asp-action="InsertACustomer" method="Post">
+        <form asp-action="InsertACustomer" name="Form" onsubmit="return validateForm()" method="Post">
             <div class="form-group">
                 <label for="aCustomerId">Customer ID:</label>
                 <input type="text" id="aCustomerId" name="aCustomerId" class="form-control" />
@@ -141,70 +141,61 @@
 </html>
 
 
+@*######################################################################################*@
+@*##########################    JavaScrip Form Validation    ###########################*@
+@*######################################################################################*@
+@*Fanial W*@
+<script>
+    function validateForm() {
 
-@*
-<form asp-action="InsertACustomer" method="Post">
-
-    Customer Id <br />
-
-    <input type="text" id="this is for js" class="this is for your css" name="aCustomerId" />
-    <br /><br />
-
-
-    Company Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCompanyName" />
-    <br /><br />
-
-    
-    Contact Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactName" />
-    <br /><br />
-
-    Contact Title <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactTitle" />
-    <br /><br />
-
-    Address <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aAddress" />
-    <br /><br />
-
-    City <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCity" />
-    <br /><br />
+        if (document.forms["Form"]["aCustomerId"].value == "") {
+            alert("ID must be filled out");
+            return false;
+        }
 
 
-    Region <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aRegion" />
-    <br /><br />
-
-
-
-    Postal Code <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" />
-    <br /><br />
-
-
-    Country <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCountry" />
-    <br /><br />
-
-
-    Phone <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPhone" />
-    <br /><br />
-
-
-
-    Fax <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aFax" />
-    <br />
-
-
-    <input type="submit"  />     <input type="reset" />
+        if (document.forms["Form"]["aCompanyName"].value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aContactName"].value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aContactTitle"].value == "") {
+            alert("Title must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aAddress"].value == "") {
+            alert("Address must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCity"].value == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRegion"].value == "") {
+            alert("Region must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPostalCode"].value == "") {
+            alert("Postal Code must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCountry"].value == "") {
+            alert("Country must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPhone"].value == "") {
+            alert("Phone must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aFax"].value == "") {
+            alert("Fax must be filled out");
+            return false;
+        }
 
 
 
-
-
-</form>
-*@
+    }
+</script>

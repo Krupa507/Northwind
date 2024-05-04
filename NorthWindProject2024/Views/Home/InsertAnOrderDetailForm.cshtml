@@ -7,7 +7,7 @@
 <h2>Insert New Order Detail</h2>
 
 
-<form asp-action="InsertAnOrderDetail" method="Post">
+<form asp-action="InsertAnOrderDetail" name="Form" onsubmit="return validateForm()" method="Post">
 
     Order Id <br />
     
@@ -74,4 +74,10 @@
 
 
 </form>
+
+
+@*######################################################################################*@
+@*##########################    JavaScrip Form Validation    ###########################*@
+@*######################################################################################*@
+@*Fanial W*@
 

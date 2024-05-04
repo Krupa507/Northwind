@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
 using NorthWindProject2024.Models;
 using SQLTest;
 using System.Diagnostics;
@@ -145,11 +146,13 @@ namespace NorthWindProject2024.Controllers
         //###############################################################################################################################
 
 
-        public IActionResult InsertAProduct(string productName, int supplierId, int categoryId, double unitPrice)
+        public IActionResult InsertAProduct(string aProductName, int aSupplierId, int aCategoryId, string aQuantityPerUnit, double aUnitPrice, string aUnitsInStock, string aUnitsOnOrder,
+            string aReorderLevel, string aDiscontinued)
         {
             DBGateway aGateway = new DBGateway();
 
-            aGateway.InsertAProduct(productName, supplierId, categoryId, unitPrice);
+            aGateway.InsertAProduct( aProductName,  aSupplierId,  aCategoryId,  aQuantityPerUnit,  aUnitPrice,  aUnitsInStock,  aUnitsOnOrder,
+             aReorderLevel,  aDiscontinued);
 
 
             List<Product> aListOfProducts = aGateway.GetProducts();
@@ -203,12 +206,14 @@ namespace NorthWindProject2024.Controllers
             return View();
         }
 
-        public IActionResult UpdateAProduct(int productId, string productName, int supplierId, int categoryId, double unitPrice)
+        public IActionResult UpdateAProduct(int aProductId, string aProductName, int aSupplierId, int aCategoryId, string aQuantityPerUnit, double aUnitPrice, string aUnitsInStock, string aUnitsOnOrder,
+            string aReorderLevel, string aDiscontinued)
         {
 
             DBGateway aGateway = new DBGateway();
 
-            aGateway.UpdateAProduct(productId, productName, supplierId, categoryId, unitPrice);
+            aGateway.UpdateAProduct(aProductId,  aProductName,  aSupplierId,  aCategoryId,  aQuantityPerUnit,  aUnitPrice,  aUnitsInStock,  aUnitsOnOrder,
+             aReorderLevel,  aDiscontinued);
 
             List<Product> aListOfProducts = new List<Product>();
 
@@ -493,46 +498,171 @@ namespace NorthWindProject2024.Controllers
         //###############################################################################################################################
         //###############################################################################################################################
 
-        //[11:27 AM] Apaloo, Jacques-Philipp
-        // In home controller 
-        public IActionResult InsertAShippers(string companyName, string phone)
+        //[9:33 PM] Apaloo, Jacques-Philipp
+// Home Controller Code: Jacques Apaloo
+
+    public IActionResult InsertShippers(string aCompanyName, string aPhone)
 
         {
 
             DBGateway aGateway = new DBGateway();
 
-            //aGateway.InsertAProduct(aProductName, aSupplierId, aCategoryId, aUnitPrice);
+            aGateway.InsertShippers(aCompanyName, aPhone);
 
-            List<Shipper> listofshippers = aGateway.GetShippers();
+            List<Shipper> aListAShippers = aGateway.GetShippers();
 
-            //reason we are returnong GetPRoducts is because if you are an employee and you insert a PRoduct, you will probablt want to see it was actually added so I am returing them to teh getproducts view
-
-            return View();
-
-        }
-
-
-        public IActionResult UpdateAShipper(int shipperId, string companyName, string phone)
-
-        {
-
-            DBGateway aGateway = new DBGateway();
-
-            aGateway.UpdateAShipper(shipperId, companyName, phone);
-
-            List<Shipper> aListOfShippers = new List<Shipper>();
-
-            ViewBag.listOfShippers = aGateway.GetShippers();
-
+            ViewBag.ListOfShippers = aListAShippers;
 
             return View("GetShippers");
 
         }
 
 
+        public IActionResult UpdateAShipper(int aShipperId, string aCompanyName, string aPhone)
+
+        {
+
+            DBGateway aGateway = new DBGateway();
+
+            aGateway.UpdateAShipper(aShipperId, aCompanyName, aPhone);
+
+            List<Shipper> aListOfShippers = aGateway.GetShippers();
+
+            ViewBag.ListOfShippers = aListOfShippers;
+
+            return View("GetShippers");
+
+        }
+
+        // Jacques Apaloo
+
+        public IActionResult GetShipperById(int aShipperId)
+
+        {
+
+            DBGateway aGateway = new DBGateway();
+
+            List<Shipper> aListOfShippers = aGateway.GetShipperById(aShipperId);
+
+            ViewBag.ListOfShippers = aListOfShippers;
+
+            return View();
+
+        }
+
+        public IActionResult UpdateAShipperForm(int aShipperId)
+
+        {
+
+
+            DBGateway aGateway = new DBGateway();
+
+            List<Shipper> aListOfShippers = new List<Shipper>();
+
+
+            aListOfShippers = aGateway.GetShipperById(aShipperId);
+
+
+            ViewBag.ListOfShippers = aListOfShippers;
+
+
+            return View();
+
+        }
+
+        public IActionResult InsertAShipperForm()
+
+        {
+
+            DBGateway aGateway = new DBGateway();
+
+            List<Shipper> aListOfShippers = aGateway.GetShippers();
+
+            ViewBag.ListOfShippers = aListOfShippers;
+
+
+            return View();
+
+        }
         //###############################################################################################################################
         //###############################################################################################################################
         //###############################################################################################################################
+
+        // Jacques Apaloo
+
+
+        public IActionResult InsertCategories(string aCategoryName, string aDescription)
+        {
+
+            DBGateway aGateway = new DBGateway();
+
+            aGateway.InsertCategories(aCategoryName, aDescription);
+
+            List<Categories> alistOfCategories = aGateway.GetCategories();
+
+            ViewBag.ListOfCategories = alistOfCategories;
+
+            return View("GetCategories");
+
+        }
+
+
+        public IActionResult UpdateACategory(int aCategoryId, string aCategoryName, string aDescription)
+        {
+
+            DBGateway aGateway = new DBGateway();
+            aGateway.UpdateACategory(aCategoryId, aCategoryName, aDescription);
+
+            List<Categories> alistOfCategories = aGateway.GetCategories();
+            ViewBag.ListOfCategories = alistOfCategories;
+            return View("GetCategories");
+
+        }
+
+        public IActionResult GetCategoryById(int aCategoryId)
+        {
+            DBGateway aGateway = new DBGateway();
+
+            List<Categories> alistOfCategories = aGateway.GetCategoryById(aCategoryId);
+
+            ViewBag.ListOfCategories = alistOfCategories;
+
+            return View();
+
+        }
+        public IActionResult UpdateACategoryForm(int aCategoryId)
+        {
+
+
+            DBGateway aGateway = new DBGateway();
+
+            List<Categories> alistOfCategories = new List<Categories>();
+
+
+            alistOfCategories = aGateway.GetCategoryById(aCategoryId);
+
+
+            ViewBag.ListOfCategories = alistOfCategories;
+
+
+            return View();
+        }
+
+        public IActionResult InsertACategoryForm()
+        {
+
+            DBGateway aGateway = new DBGateway();
+
+            List<Categories> alistOfCategories = aGateway.GetCategories();
+
+            ViewBag.ListOfCategories = alistOfCategories;
+
+
+            return View();
+        }
+
+
+
 
         //###############################################################################################################################
         //###############################################################################################################################

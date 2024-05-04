@@ -14,7 +14,7 @@ namespace SQLTest
 {
     internal class DBGateway
     {
-
+        //logan krupa
         public List<Product> GetProducts()
         {
             List<Product> listOfProducts = new List<Product>();
@@ -24,7 +24,12 @@ namespace SQLTest
             string productName = "n/a";
             long supplierId = 0;
             long categoryId = 0;
+            string quantityPerUnit = "n/a";
             double unitPrice = 999999.99;
+            string unitsInStock = "n/a";
+            string unitsOnOrder = "n/a";
+            string reorderLevel = "n/a";
+            string discontinued = "n/a";
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
@@ -33,7 +38,7 @@ namespace SQLTest
             //now create a command
             SqliteCommand command = connection.CreateCommand();
 
-            command.CommandText = "select productid, productname, supplierid, categoryid, unitprice from products;";
+            command.CommandText = "select productid, productname, supplierid, categoryid, quantityperunit, unitprice, unitsInStock, unitsOnOrder, reorderLevel, discontinued from products;";
 
             SqliteDataReader reader = command.ExecuteReader();
 
@@ -48,7 +53,12 @@ namespace SQLTest
                 productName = (string)reader["productName"];
                 supplierId = (long)reader["supplierId"];
                 categoryId = (long)reader["categoryId"];
+                quantityPerUnit = Convert.ToString(reader["quantityPerUnit"]);
                 unitPrice = Convert.ToDouble(reader["unitPrice"]);
+                unitsInStock = Convert.ToString(reader["unitsInStock"]);
+                unitsOnOrder = Convert.ToString(reader["unitsOnOrder"]);
+                reorderLevel = Convert.ToString(reader["reorderLevel"]);
+                discontinued = Convert.ToString(reader["discontinued"]);
                 /*
                 //print out the results 
                 Console.WriteLine("ProductId: " + productId);
@@ -64,7 +74,12 @@ namespace SQLTest
                 aProduct.ProductName = productName;
                 aProduct.SupplierId = Convert.ToInt32(supplierId);
                 aProduct.CategoryId = Convert.ToInt32(categoryId);
+                aProduct.QuantityPerUnit = quantityPerUnit;
                 aProduct.UnitPrice = unitPrice;
+                aProduct.UnitsInStock = unitsInStock;
+                aProduct.UnitsOnOrder = unitsOnOrder;
+                aProduct.ReorderLevel = reorderLevel;
+                aProduct.Discontinued = discontinued;
 
                 listOfProducts.Add(aProduct);
 
@@ -90,7 +105,12 @@ namespace SQLTest
             string productName = "n/a";
             long supplierId = 0;
             long categoryId = 0;
+            string quantityPerUnit = "n/a";
             double unitPrice = 999999.99;
+            string unitsInStock = "n/a";
+            string unitsOnOrder = "n/a";
+            string reorderLevel = "n/a";
+            string discontinued = "n/a";
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
@@ -101,14 +121,8 @@ namespace SQLTest
 
             command.Parameters.Add("@productid", SqliteType.Integer).Value = aProductId;
 
-            //third, set up our SAL statment
-            //an evil hacker 
 
-            command.CommandText = "select productid, productname, supplierid, categoryid, unitprice from products where productid = " + aProductId + ";";
-
-
-            //we could go even further and make this whole thing a stored preseger
-            //where the database would do anouther check to make sure there was no sql injwction
+            command.CommandText = "select productid, productname, supplierid, categoryid, quantityperunit, unitprice, unitsInStock, unitsOnOrder, reorderLevel, discontinued from products where productid = " + aProductId + ";";
 
             SqliteDataReader reader = command.ExecuteReader();
 
@@ -123,7 +137,12 @@ namespace SQLTest
                 productName = (string)reader["productName"];
                 supplierId = (long)reader["supplierId"];
                 categoryId = (long)reader["categoryId"];
+                quantityPerUnit = Convert.ToString(reader["quantityPerUnit"]);
                 unitPrice = Convert.ToDouble(reader["unitPrice"]);
+                unitsInStock = Convert.ToString(reader["unitsInStock"]);
+                unitsOnOrder = Convert.ToString(reader["unitsOnOrder"]);
+                reorderLevel = Convert.ToString(reader["reorderLevel"]);
+                discontinued = Convert.ToString(reader["discontinued"]);
                 /*
                 //print out the results 
                 Console.WriteLine("ProductId: " + productId);
@@ -139,7 +158,12 @@ namespace SQLTest
                 aProduct.ProductName = productName;
                 aProduct.SupplierId = Convert.ToInt32(supplierId);
                 aProduct.CategoryId = Convert.ToInt32(categoryId);
+                aProduct.QuantityPerUnit = quantityPerUnit;
                 aProduct.UnitPrice = unitPrice;
+                aProduct.UnitsInStock = unitsInStock;
+                aProduct.UnitsOnOrder = unitsOnOrder;
+                aProduct.ReorderLevel = reorderLevel;
+                aProduct.Discontinued = discontinued;
 
                 listOfProducts.Add(aProduct);
 
@@ -265,8 +289,8 @@ namespace SQLTest
                 firstName = (string)reader["firstName"];
                 title = (string)reader["title"];
                 titleOfCourtesy = (string)reader["titleOfCourtesy"];
-                birthDate = (string)reader["birthDate"];
-                hireDate = (string)reader["hireDate"];
+                birthDate = Convert.ToString(reader["birthDate"]);
+                hireDate = Convert.ToString(reader["hireDate"]);
                 address = (string)reader["address"];
                 city = (string)reader["city"];
                 region = Convert.ToString(reader["region"]);
@@ -364,8 +388,8 @@ namespace SQLTest
                 firstName = (string)reader["firstName"];
                 title = (string)reader["title"];
                 titleOfCourtesy = (string)reader["titleOfCourtesy"];
-                birthDate = (string)reader["birthDate"];
-                hireDate = (string)reader["hireDate"];
+                birthDate = Convert.ToString(reader["birthDate"]);
+                hireDate = Convert.ToString(reader["hireDate"]);
                 address = (string)reader["address"];
                 city = (string)reader["city"];
                 region = Convert.ToString(reader["region"]);
@@ -505,7 +529,7 @@ namespace SQLTest
 
         }
         //################################################################################################################################
-
+        //Logan Krupa
 
         public List<Order> GetOrdersById(int aOrderId)
         {
@@ -1007,7 +1031,8 @@ namespace SQLTest
         //#################################################################################################################################
         //#################################################################################################################################
 
-        public List<Product> InsertAProduct(string aProductName, int aSupplierId, int aCategoryId, double aUnitPrice) 
+        public List<Product> InsertAProduct(string aProductName, int aSupplierId, int aCategoryId, string aQuantityPerUnit, double aUnitPrice, string aUnitsInStock, string aUnitsOnOrder,
+            string aReorderLevel, string aDiscontinued) 
         {
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
@@ -1018,13 +1043,18 @@ namespace SQLTest
             SqliteCommand command = connection.CreateCommand();
 
             //third, set up our sql statment
-            command.CommandText = "insert into products(productname, supplierid, categoryid, unitprice)values(@ProductName, @SupplierId, @CategoryId, @UnitPrice);";
+            command.CommandText = "insert into products(productname, supplierid, categoryid, quantityperunit, unitprice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)values(@ProductName, @SupplierId, @CategoryId, @QuantityPerUnit, @UnitPrice, @UnitsInStock, @UnitsOnOrder, @ReorderLevel, @Discontinued);";
 
             //command.Parameters.Add("@productName", SqliteType.Text).Value = aProductId;
             command.Parameters.Add("@ProductName", SqliteType.Text).Value = aProductName;
             command.Parameters.Add("@SupplierId", SqliteType.Text).Value = aSupplierId;
             command.Parameters.Add("@CategoryId", SqliteType.Text).Value = aCategoryId;
+            command.Parameters.Add("@QuantityPerUnit", SqliteType.Text).Value=aQuantityPerUnit;
             command.Parameters.Add("@UnitPrice",SqliteType.Text).Value = aUnitPrice;
+            command.Parameters.Add("@UnitsInStock", SqliteType.Text).Value = aUnitsInStock;
+            command.Parameters.Add("@UnitsOnOrder", SqliteType.Text).Value = aUnitsOnOrder;
+            command.Parameters.Add("@ReorderLevel", SqliteType.Text).Value = aReorderLevel;
+            command.Parameters.Add("@Discontinued", SqliteType.Text).Value = aDiscontinued;
 
             command.ExecuteNonQuery();
 
@@ -1033,7 +1063,8 @@ namespace SQLTest
             return listOfproducts;
         }
 
-        public List<Product> UpdateAProduct(int aProductId, string aProductName, int aSupplierId, int aCategoryId, double aUnitPrice) {
+        public List<Product> UpdateAProduct(int aProductId, string aProductName, int aSupplierId, int aCategoryId, string aQuantityPerUnit, double aUnitPrice, string aUnitsInStock, string aUnitsOnOrder,
+            string aReorderLevel, string aDiscontinued) {
 
 
 
@@ -1046,13 +1077,17 @@ namespace SQLTest
             SqliteCommand command = connection.CreateCommand();
 
             // <input type="test" id="this is for js" class="this is for your css" name="productName" value="@ViewBag.ListOfProducts[0].ProductName" /><br />
-            command.CommandText = "update Products set productname = @ProductName, supplierid = @SupplierId, categoryid = @CategoryId, unitprice = @UnitPrice where productid = @ProductId;";
+            command.CommandText = "update Products set productname = @ProductName, supplierid = @SupplierId, categoryid = @CategoryId, quantityperunit = @QuantityPerUnit, unitprice = @UnitPrice, unitsInStock = @UnitsInStock, unitsOnOrder = @UnitsOnOrder, reorderLevel = @ReorderLevel, discontinued = @Discontinued where productId = @ProductId;";
             command.Parameters.Add("@ProductId", SqliteType.Integer).Value = aProductId;
-
             command.Parameters.Add("@ProductName", SqliteType.Text).Value = aProductName;
             command.Parameters.Add("@SupplierId", SqliteType.Text).Value = aSupplierId;
             command.Parameters.Add("@CategoryId", SqliteType.Text).Value = aCategoryId;
+            command.Parameters.Add("@QuantityPerUnit", SqliteType.Text).Value = aQuantityPerUnit;
             command.Parameters.Add("@UnitPrice", SqliteType.Text).Value = aUnitPrice;
+            command.Parameters.Add("@UnitsInStock", SqliteType.Text).Value = aUnitsInStock;
+            command.Parameters.Add("@UnitsOnOrder", SqliteType.Text).Value = aUnitsOnOrder;
+            command.Parameters.Add("@ReorderLevel", SqliteType.Text).Value = aReorderLevel;
+            command.Parameters.Add("@Discontinued", SqliteType.Text).Value = aDiscontinued;
 
             command.ExecuteNonQuery();
 
@@ -1335,147 +1370,209 @@ namespace SQLTest
 
         //######################################################################################################################################
         //######################################################################################################################################
-        //######################################################################################################################################
+        //######################################################################################################################################        
+
+        // DBgateway code: Jacques Apaloo
+        public List<Shipper> GetShipperById(int aShipperId)
+        {
+            List<Shipper> aListOfShippers = new List<Shipper>();
+
+            long shipperId = 0;
+            string companyName = "n/a";
+            string phone = "n/a";
+
+            // Create a new SQLite connection
+            SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
+
+            // Open the connection
+            connection.Open();
+
+            // Create a SQL command to retrieve order details
+            SqliteCommand command = connection.CreateCommand();
+            command.CommandText = "select shipperId, companyName, phone from Shippers where shipperId = '" + aShipperId + "';";
+
+            // Execute the command and read the results
+            SqliteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
 
 
-        //[11:22 AM] Apaloo, Jacques-Philipp
+                shipperId = (long)reader["shipperId"];
+                companyName = (string)reader["companyName"];
+                phone = (string)reader["phone"];
+
+                Shipper aShipper = new Shipper();
+
+
+                aShipper.ShipperId = Convert.ToInt32(shipperId);
+                aShipper.CompanyName = companyName;
+                aShipper.Phone = phone;
+
+                aListOfShippers.Add(aShipper);
+            }
+
+            // Close the connection
+            connection.Close();
+
+            return aListOfShippers;
+        }
+        // DBgateway code: Jacques Apaloo
+
         public List<Shipper> InsertShippers(string aCompanyName, string aPhone)
-
         {
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
-            //first open connection
-
+            // First try to open the connection
             connection.Open();
 
-            //now create a command
-
+            // Second create a command
             SqliteCommand command = connection.CreateCommand();
 
-            //third, set up our sql statment
+            // Third, set up our SQL statement
+            command.CommandText = "insert into shippers(companyName, phone) " +
+                "values(@companyName, @phone);";
 
-            command.CommandText = "insert into shippers(companyName, phone)values" +
+            
+            command.Parameters.Add("@companyName", SqliteType.Text).Value = aCompanyName;
+            command.Parameters.Add("@phone", SqliteType.Text).Value = aPhone;
 
-                "(@companyname, @phone);";
 
-            // command.CommandText = "insert into Shippers(companyName)values(@catname, @desc);";
-
-            // command.Parameters.Add("@ShipperId", SqliteType.Text).Value = aShipperId;
-
-            command.Parameters.Add("@CompanyName", SqliteType.Text).Value = aCompanyName;
-
-            command.Parameters.Add("@Phone", SqliteType.Text).Value = aPhone;
-
+            // Forth run the sql statement
             command.ExecuteNonQuery();
 
-            List<Shipper> listOfShippers = this.GetShippers();
+            // Then I return the new List after the insertion
+            List<Shipper> alistOfShippers = this.GetShippers();
 
-            return listOfShippers;
-
+            return alistOfShippers;
         }
 
+        // DBgateway code: Jacques Apaloo
         public List<Shipper> UpdateAShipper(int aShipperId, string aCompanyName, string aPhone)
-
         {
 
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
             //first open connection
-
             connection.Open();
-
             //now create a command
-
             SqliteCommand command = connection.CreateCommand();
 
-            command.CommandText = "update Shippers set companyname = @companyName, phone = @Phone;";
-
-            command.Parameters.Add("@ShipperId", SqliteType.Text).Value = aShipperId;
-
-            command.Parameters.Add("@CompanyName", SqliteType.Text).Value = aCompanyName;
-
-            command.Parameters.Add("@Phone", SqliteType.Text).Value = aPhone;
+            command.CommandText = "update Shippers set companyname = @companyName, phone = @phone where @shipperId = shipperId;";
+            command.Parameters.Add("@shipperId", SqliteType.Text).Value = aShipperId;
+            command.Parameters.Add("@companyName", SqliteType.Text).Value = aCompanyName;
+            command.Parameters.Add("@phone", SqliteType.Text).Value = aPhone;
 
             command.ExecuteNonQuery();
 
-            List<Shipper> listOfShippers = this.GetShippers();
+            List<Shipper> aListOfShippers = this.GetShippers();
 
-            return listOfShippers;
-
+            return aListOfShippers;
 
         }
+        //######################################################################################################################################
+        //######################################################################################################################################
+        //######################################################################################################################################        
+        //        // DBgateway code: Jacques Apaloo
 
-        public List<Categories> InsertCategories(string aCategoryName, string aDescription, string aPicture)
+        public List<Categories> GetCategoryById(int aCategoryId)
+        {
+            List<Categories> alistOfCategories = new List<Categories>();
 
+            long categoryId = 0;
+            string categoryName = "n/a";
+            string description = "n/a";
+
+            // Create a new SQLite connection
+            SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
+
+            // Open the connection
+            connection.Open();
+
+            // Create a SQL command to retrieve order details
+            SqliteCommand command = connection.CreateCommand();
+            command.CommandText = "select categoryId, categoryName, description from Categories where categoryId = '" + aCategoryId + "';";
+
+            // Execute the command and read the results
+            SqliteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+
+                categoryId = (long)reader["categoryId"];
+                categoryName = (string)reader["categoryName"];
+                description = (string)reader["description"];
+
+                Categories aCategory = new Categories();
+
+
+                aCategory.CategoryId = Convert.ToInt32(categoryId);
+                aCategory.CategoryName = categoryName;
+                aCategory.Description = description;
+
+                alistOfCategories.Add(aCategory);
+            }
+
+            // Close the connection
+            connection.Close();
+
+            return alistOfCategories;
+        }
+        //        // DBgateway code: Jacques Apaloo
+
+        public List<Categories> InsertCategories(string aCategoryName, string aDescription)
         {
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
-            //first open connection
-
+            // First try to open the connection
             connection.Open();
 
-            //now create a command
-
+            // Second create a command
             SqliteCommand command = connection.CreateCommand();
 
-            //third, set up our sql statment
+            // Third, set up our SQL statement
+            command.CommandText = "insert into Categories(categoryName, description) " +
+                "values(@categoryName, @description);";
 
-            command.CommandText = "insert into categories(categoryName, description, picture)values" +
+            command.Parameters.Add("@categoryName", SqliteType.Text).Value = aCategoryName;
+            command.Parameters.Add("@description", SqliteType.Text).Value = aDescription;
 
-                "(@categoryname, @description, @picture);";
 
-            // command.CommandText = "insert into Shippers(companyName)values(@catname, @desc);";
-
-            // command.Parameters.Add("@ShipperId", SqliteType.Text).Value = aShipperId;
-
-            command.Parameters.Add("@CategoryName", SqliteType.Text).Value = aCategoryName;
-
-            command.Parameters.Add("@Description", SqliteType.Text).Value = aDescription;
-
-            command.Parameters.Add("@aPicture", SqliteType.Text).Value = aPicture;
-
+            // Forth run the sql statement
             command.ExecuteNonQuery();
 
-            List<Categories> listOfCategories = this.GetCategories();
+            // Then I return the new List after the insertion
+            List<Categories> alistOfCategories = this.GetCategories();
 
-            return listOfCategories;
+            return alistOfCategories;
 
         }
+        //        // DBgateway code: Jacques Apaloo
 
-        public List<Categories> UpdateACategories(int aCategoryId, string aCategoryName, string aDescription, string aPicture)
-
+        public List<Categories> UpdateACategory(int aCategoryId, string aCategoryName, string aDescription)
         {
-
 
             SqliteConnection connection = new SqliteConnection("Data Source=C:\\DATABASES\\Northwind.db");
 
             //first open connection
-
             connection.Open();
-
             //now create a command
-
             SqliteCommand command = connection.CreateCommand();
 
-            command.CommandText = "update Categories set categoryname = @categoryName, description = @description, picture = @picture;";
-
-            command.Parameters.Add("@CategoryId", SqliteType.Text).Value = aCategoryName;
-
-            command.Parameters.Add("@CategoryName", SqliteType.Text).Value = aCategoryName;
-
-            command.Parameters.Add("@Description", SqliteType.Text).Value = aDescription;
-
-            command.Parameters.Add("@aPicture", SqliteType.Text).Value = aPicture;
+            command.CommandText = "update categories set categoryName = @categoryName, description = @description where @categoryId = categoryId;";
+            command.Parameters.Add("@categoryId", SqliteType.Text).Value = aCategoryId;
+            command.Parameters.Add("@categoryName", SqliteType.Text).Value = aCategoryName;
+            command.Parameters.Add("@description", SqliteType.Text).Value = aDescription;
 
             command.ExecuteNonQuery();
 
-            List<Categories> listOfCategories = this.GetCategories();
+            List<Categories> alistOfCategories = this.GetCategories();
 
-            return listOfCategories;
-
+            return alistOfCategories;
         }
 
         //###############################################################################################################################

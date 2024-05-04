@@ -3,25 +3,21 @@
 *@
 @{
 }
-@* code: Jacques Apaloo
-*@
-<h2>Update a Category</h2>
-<h4>Primary Key: @ViewBag.ListOfCategories[0].CategoryId </h4>
+@* code: Jacques Apaloo*@
 
+<form name="Form" onsubmit="return validateForm()" action="InsertCategories" method="Post">
 
-<form name="Form" onsubmit="return validateForm()" action="UpdateACategory" method="Post">
-
-
-    <input type="hidden" name="aCategoryId" value="@ViewBag.ListOfCategories[0].CategoryId" />
 
     Category Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCategoryName" value="@ViewBag.ListOfCategories[0].CategoryName" /><br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCategoryName"  />
+    <br />
 
     Description <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aDescription" value="@ViewBag.ListOfCategories[0].Description" /><br />
+    <input type="text" id="this is for js" class="this is for your css" name="aDescription"  />
+
+    <br />
 
     <input type="submit" />     <input type="reset" />
-
 </form>
 
 
@@ -32,7 +28,7 @@
 
 <script>
     function validateForm() {
-
+       
         if (document.forms["Form"]["aCategoryName"].value == "") {
             alert("Category Name must be filled out");
             return false;

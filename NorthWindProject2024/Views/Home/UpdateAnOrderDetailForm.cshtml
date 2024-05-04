@@ -9,7 +9,7 @@
 <h3>Product ID: @ViewBag.ListOfOrderDetails[0].ProductId</h3>
 
 
-<form asp-action="UpdateAnOrderDetail" method="Post">
+<form asp-action="UpdateAnOrderDetail" name="Form" onsubmit="return validateForm()" method="Post">
 
     <input type="hidden" name="aOrderId" value="@ViewBag.ListOfOrderDetails[0].OrderId" />
 
@@ -46,3 +46,8 @@
 
 
 </form>
+
+@*######################################################################################*@
+@*##########################    JavaScrip Form Validation    ###########################*@
+@*######################################################################################*@
+@*Fanial W*@

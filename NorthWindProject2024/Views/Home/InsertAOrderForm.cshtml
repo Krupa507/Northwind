@@ -1,19 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
 
 
 
-
-
-<form action="InsertAOrder" method="Post">
+<form action="InsertAOrder" name="Form" onsubmit="return validateForm()" method="Post">
 
     @*CustomerId <br />
     <input type="test" id="this is for js" class="this is for your css" name="aCustomerId" />
@@ -70,7 +59,13 @@
     Shipped Date <br />
     <input type="text" id="this is for js" class="this is for your css" name="aShippedDate" /><br />
 
+    
+    Ship Via
+    <br />
+
+    [6:20 PM] Woldu, Fanial K
     Ship Via <br />
+
     <input type="text" id="this is for js" class="this is for your css" name="aShipVia" /><br />
 
     Freight <br />
@@ -101,3 +96,58 @@
 
 
 </form>
+
+@*######################################################################################*@
+@*##########################    JavaScrip Form Validation    ###########################*@
+@*######################################################################################*@
+@*Logan Krupa*@
+<script>
+    function validateForm() {
+
+
+           if (document.forms["Form"]["aOrderDate"].value == "") {
+               alert("OrderDate must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aRequiredDate"].value == "") {
+               alert("RequiredDate must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShippedDate"].value == "") {
+               alert("ShippedDate must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipVia"].value == "") {
+               alert("ShipVia must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aFreight"].value == "") {
+               alert("Freight must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipName"].value == "") {
+               alert("ShipName must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipAddress"].value == "") {
+               alert("ShipAddress must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipCity"].value == "") {
+               alert("ShipCity must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipRegion"].value == "") {
+               alert("ShipRegion must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipPostalCode"].value == "") {
+               alert("ShipPostalCode must be filled out");
+               return false;
+           }
+           if (document.forms["Form"]["aShipCountry"].value == "") {
+               alert("ShipCountry must be filled out");
+               return false;
+           }
+
+       }</script>

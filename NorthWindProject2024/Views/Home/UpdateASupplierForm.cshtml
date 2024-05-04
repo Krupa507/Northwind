@@ -14,7 +14,7 @@ Update Supplier Form:
 
 
 
-<form action="UpdateASupplier" method="Post">
+<form action="UpdateASupplier" name="Form" onsubmit="return validateForm()" method="Post">
 
 
     <input type="hidden" name="aSupplierId" value="@ViewBag.ListOfSuppliers[0].SupplierId" />
@@ -79,38 +79,3 @@ Update Supplier Form:
 
 
 </form>
-
-@*
-<form action="UpdateASupplier" method="Post">
-
-    <input type="hidden" name="aSupplierId" value="@ViewBag.ListOfSuppliers[0].SupplierId" />
-
-
-    Company Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCompanyName" value="@ViewBag.ListOfSuppliers[0].CompanyName" /><br />
-    Contact Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactName" value="@ViewBag.ListOfSuppliers[0].ContactName" /><br />
-    Contact Title <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactTitle" value="@ViewBag.ListOfSuppliers[0].ContactTitle" /><br />
-    address <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aAddress" value="@ViewBag.ListOfSuppliers[0].Address" /><br />
-    City <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCity" value="@ViewBag.ListOfSuppliers[0].City" /><br />
-    Region <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aRegion" value="@ViewBag.ListOfSuppliers[0].Region" /><br />
-    Postal Code <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" value="@ViewBag.ListOfSuppliers[0].PostalCode" /><br />
-    Counrty <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCountry" value="@ViewBag.ListOfSuppliers[0].Country" /><br />
-    Phone <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPhone" value="@ViewBag.ListOfSuppliers[0].Phone" /><br />
-    Fax <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aFax" value="@ViewBag.ListOfSuppliers[0].Fax" /><br />
-    Home Page <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aHomePage" value="@ViewBag.ListOfSuppliers[0].HomePage" /><br />
-
-    <input type="submit" />     <input type="reset" />
-
-
-</form>
-*@
